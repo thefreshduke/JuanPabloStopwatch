@@ -41,6 +41,9 @@
                                 <state key="normal" title="START">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="startTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wTC-G9-Bsn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thW-do-tsr">
                                 <rect key="frame" x="200" y="412" width="200" height="100"/>
@@ -55,6 +58,9 @@
                                 <state key="normal" title="STOP">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="stopTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="USp-Fn-6Oe"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -67,6 +73,11 @@
                             <constraint firstItem="eTT-me-z1e" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wHe-Is-ULl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="startButton" destination="U3a-Pg-fa1" id="hUV-KY-jEz"/>
+                        <outlet property="stopButton" destination="thW-do-tsr" id="mng-XV-e35"/>
+                        <outlet property="timeDisplayLabel" destination="eTT-me-z1e" id="Xlo-uZ-Dmk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
