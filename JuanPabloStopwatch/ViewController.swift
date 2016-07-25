@@ -10,16 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var timer = NSTimer()
+    var counter: Int = 0
+    
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var timeDisplayLabel: UILabel!
     @IBOutlet weak var stopButton: UIButton!
     
     @IBAction func startTime(sender: AnyObject) {
-        
+        validateTimer()
     }
     
     @IBAction func stopTime(sender: AnyObject) {
-        
+        timer.invalidate()
+        counter = 0
     }
 
     override func viewDidLoad() {
@@ -30,6 +34,16 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func validateTimer() {
+        let repeatingFunction = #selector(ViewController.updateTime)
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: repeatingFunction, userInfo: nil, repeats: true)
+    }
+    
+    func updateTime() {
+        counter += 1
+        timeDisplayLabel.text = "\(counter)"
     }
 }
 
